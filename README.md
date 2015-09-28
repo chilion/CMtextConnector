@@ -16,4 +16,4 @@ A connector to the CM sms service
     SMS::sendMessage("0031600000000", "Test with Connector")
 
 # Config
-	Don't forget to fill in the right company name and product token
+Don't forget to fill in the right company name and product token
