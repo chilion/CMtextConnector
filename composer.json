@@ -1,0 +1,19 @@
+{
+    "name": "cjsdevelopment/cmtextconnector",
+    "description": "A connector for CM text (SMS) messages and Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chilion Snoek",
+            "email": "chilionsnoek@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+
+    "autoload": {
+      "psr-4": {
+        "CJSDevelopment\\": "src/"
+
+
+}
