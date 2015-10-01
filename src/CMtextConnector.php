@@ -6,7 +6,7 @@ use \SimpleXMLElement;
 
 class CMtextConnector
 {
-    public function __construct() {
+     public function __construct() {
         return $this;
     }
 
@@ -25,11 +25,20 @@ class CMtextConnector
     }
 
     static public function sendMessage($recipient, $message) {
+        $gateway = "https://sgw01.cm.nl/gateway.ashx";
+
         $xml = self::buildMessageXml($recipient, $message);
 
+        // Let us first check if the standard gateway is live.
+        $gatewayCheck = get_headers($gateway);
+        if ($gatewayCheck[0] != "HTTP/1.1 200 OK") {
+            $gateway = "https://sgw02.cm.nl/gateway.ashx";
+        }
+
+        // Send the request
         $ch = curl_init(); // cURL v7.18.1+ and OpenSSL 0.9.8j+ are required
         curl_setopt_array($ch, array(
-                CURLOPT_URL            => 'https://sgw01.cm.nl/gateway.ashx',
+                CURLOPT_URL            => $gateway,
                 CURLOPT_HTTPHEADER     => array('Content-Type: application/xml'),
                 CURLOPT_POST           => true,
                 CURLOPT_POSTFIELDS     => $xml,
