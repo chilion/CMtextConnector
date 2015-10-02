@@ -11,9 +11,10 @@ class CMtextConnectorServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->publishes([
-            __DIR__.'/config/cmtextconnector.php' => config_path('cmtextconnector.php')
+            __DIR__.'/config/cmtextconnector.php' => config_path('cmtextconnector.php'),
         ], 'config');
     }
 
@@ -22,7 +23,8 @@ class CMtextConnectorServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register() {
+    public function register()
+    {
         //
     }
 }
