@@ -19,7 +19,7 @@ class CMtextConnector
         $authentication->addChild('PRODUCTTOKEN', config('cmtextconnector.product_token'));
 
         $msg = $xml->addChild('MSG');
-        $msg->addChild('FROM', config('cmtextconnnector.company_name'));
+        $msg->addChild('FROM', config('cmtextconnector.company_name'));
         $msg->addChild('TO', $recipient);
         $msg->addChild('BODY', $message);
 
